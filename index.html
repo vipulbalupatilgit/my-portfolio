@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vipul Patil - QA Automation Engineer</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vipul Patil | Software Engineer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
+
 <body>
-  <header>
-    <img src="img/vipul_pic1.jpg" alt="Vipul Patil" class="profile-pic">
-    <h1>Vipul Patil</h1>
-    <p>QA Automation Engineer | Manual Tester | API | Mobile | Database</p>
+  <header class="hero">
+    <img src="img/vipul_pic1.jpg" class="profile-pic" alt="Vipul Patil" />
+    <h1>Hi, I'm Vipul Patil</h1>
+    <p>A Software Engineer & QA Specialist</p>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Schools</a></li>
+        <li><a href="#clients">Clients</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="experience">
-    <h2>Experience</h2>
-    <div class="card"><img src="img/Intertek.jpg"><p><b>Intertek</b> - EDC Project<br>Oct 2023 - June 2024</p></div>
-    <div class="card"><img src="img/SGS.jpg"><p><b>SGS</b> - Cambia Project<br>Dec 2022 - Oct 2023</p></div>
-    <div class="card"><img src="img/GVS.jpg"><p><b>GVS</b> - Caresource<br>Jul 2019 - Oct 2022</p></div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m an Automation & Manual QA Engineer with over 5 years of experience in automation, API, mobile and database testing across the healthcare domain. I've worked with tools like Selenium, Playwright, Postman and frameworks like BDD and TDD.</p>
   </section>
 
-  <section class="projects">
+  <section id="experience">
+    <h2>My Experience</h2>
+    <div class="card" onclick="showProject('edc')">
+      <img src="img/Intertek.png" alt="Intertek" />
+      <h3>Intertek India Pvt Ltd</h3>
+      <p>QA Engineer | Oct 2023 - June 2024</p>
+    </div>
+    <div class="card" onclick="showProject('cambia')">
+      <img src="img/SGS.png" alt="SGS" />
+      <h3>SGS India Pvt Ltd</h3>
+      <p>QA Analyst | Dec 2022 - Oct 2023</p>
+    </div>
+    <div class="card" onclick="showProject('caresource')">
+      <img src="img/GVS.png" alt="GVS" />
+      <h3>GVS Cibatech Pvt Ltd</h3>
+      <p>Analyst | Jul 2019 - Oct 2022</p>
+    </div>
+  </section>
+
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="card"><img src="img/Cambia_Project.jpg"><p><b>Cambia</b></p></div>
-    <div class="card"><img src="img/Caresource_Project.jpg"><p><b>Caresource</b></p></div>
-    <div class="card"><img src="img/EDC_Project.jpg"><p><b>EDC</b></p></div>
+    <div id="project-edc" class="project-detail hidden">
+      <img src="img/EDC_Project.png" alt="EDC Project">
+      <p>EDC - Automated and manual testing in healthcare using Selenium, Cucumber, Java, Playwright.</p>
+    </div>
+    <div id="project-cambia" class="project-detail hidden">
+      <img src="img/Cambia_Project.png" alt="Cambia Project">
+      <p>Cambia - Java Selenium test automation with AWS performance testing.</p>
+    </div>
+    <div id="project-caresource" class="project-detail hidden">
+      <img src="img/Caresource_Project.png" alt="Caresource Project">
+      <p>Caresource - AI testing, API automation with Playwright, ML algorithm validation.</p>
+    </div>
   </section>
 
-  <section class="education">
-    <h2>Education</h2>
-    <div class="card"><img src="img/Fergusson.jpg"><p>Fergusson College, Pune<br>2017 - 2019</p></div>
+  <section id="education">
+    <h2>Schools</h2>
+    <div class="card">
+      <img src="img/Fergusson.png" alt="Fergusson College" />
+      <h3>Fergusson College, Pune</h3>
+      <p>Master of Science, 2017–2019</p>
+    </div>
+  </section>
+
+  <section id="clients">
+    <h2>Clients</h2>
+    <div class="card"><h3>EDC</h3></div>
+    <div class="card"><h3>Cambia</h3></div>
+    <div class="card"><h3>Caresource</h3></div>
   </section>
 
   <footer>
-    <p>Contact: vipulbalupatil@gmail.com | GitHub: <a href="https://github.com/vipulbalupatilgit">vipulbalupatilgit</a></p>
+    <p>&copy; 2025 Vipul Patil | <a href="mailto:vipulbalupatil@gmail.com">Contact Me</a></p>
   </footer>
 </body>
+
 </html>
