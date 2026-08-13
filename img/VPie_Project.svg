@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05060f"/>
+      <stop offset="55%" stop-color="#0a0f24"/>
+      <stop offset="100%" stop-color="#120a26"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2e9a"/>
+      <stop offset="100%" stop-color="#7c4dff"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2e9a" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff2e9a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c4dff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#7c4dff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="rgba(120,170,255,0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <circle cx="150" cy="120" r="260" fill="url(#glow1)"/>
+  <circle cx="1040" cy="610" r="300" fill="url(#glow2)"/>
+
+  <!-- circuit lines -->
+  <g stroke="#ff2e9a" stroke-opacity="0.35" stroke-width="1.5" fill="none">
+    <path d="M0,210.00000000000003 H220 L260,165.0 H520"/>
+    <path d="M1200,562.5 H940 L900,615.0 H580"/>
+  </g>
+  <g fill="#7c4dff">
+    <circle cx="520" cy="165.0" r="4"/>
+    <circle cx="220" cy="210.00000000000003" r="4"/>
+    <circle cx="580" cy="615.0" r="4"/>
+  </g>
+
+  <!-- corner bracket accents -->
+  <g stroke="#ff2e9a" stroke-width="2.5" fill="none" opacity="0.8">
+    <path d="M60,60 L60,110 M60,60 L110,60"/>
+    <path d="M1140,690 L1140,640 M1140,690 L1090,690"/>
+  </g>
+
+  <text x="80" y="315.0" font-family="'Segoe UI', Arial, sans-serif" font-size="20" letter-spacing="4" fill="#ff2e9a" opacity="0.9">TEST AUTOMATION · SaaS</text>
+  <text x="78" y="393.0" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="url(#titleGrad)">VPie</text>
+  <rect x="80" y="415.0" width="140" height="4" fill="url(#titleGrad)"/>
+
+  
+        <g transform="translate(80,620)">
+          <rect x="0" y="0" width="136" height="42" rx="21" fill="rgba(10,14,30,0.55)" stroke="#ff2e9a" stroke-width="1.4"/>
+          <text x="68.0" y="27" font-family="'Courier New', monospace" font-size="15" fill="#dfe7ff" text-anchor="middle" letter-spacing="0.5">Playwright</text>
+        </g>
+        <g transform="translate(230,620)">
+          <rect x="0" y="0" width="136" height="42" rx="21" fill="rgba(10,14,30,0.55)" stroke="#ff2e9a" stroke-width="1.4"/>
+          <text x="68.0" y="27" font-family="'Courier New', monospace" font-size="15" fill="#dfe7ff" text-anchor="middle" letter-spacing="0.5">TypeScript</text>
+        </g>
+        <g transform="translate(380,620)">
+          <rect x="0" y="0" width="147" height="42" rx="21" fill="rgba(10,14,30,0.55)" stroke="#ff2e9a" stroke-width="1.4"/>
+          <text x="73.5" y="27" font-family="'Courier New', monospace" font-size="15" fill="#dfe7ff" text-anchor="middle" letter-spacing="0.5">Cucumber.js</text>
+        </g>
+        <g transform="translate(541,620)">
+          <rect x="0" y="0" width="92" height="42" rx="21" fill="rgba(10,14,30,0.55)" stroke="#ff2e9a" stroke-width="1.4"/>
+          <text x="46.0" y="27" font-family="'Courier New', monospace" font-size="15" fill="#dfe7ff" text-anchor="middle" letter-spacing="0.5">JMeter</text>
+        </g>
+        <g transform="translate(647,620)">
+          <rect x="0" y="0" width="158" height="42" rx="21" fill="rgba(10,14,30,0.55)" stroke="#ff2e9a" stroke-width="1.4"/>
+          <text x="79.0" y="27" font-family="'Courier New', monospace" font-size="15" fill="#dfe7ff" text-anchor="middle" letter-spacing="0.5">Azure DevOps</text>
+        </g>
+</svg>
