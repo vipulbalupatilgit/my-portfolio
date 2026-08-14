@@ -19,7 +19,20 @@
   <link href="css/futuristic.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body id="page-top" class="dark-mode">
+  <!-- Apply saved theme before first paint to avoid a flash of the wrong theme -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('vipul-portfolio-theme');
+      if (saved === 'light') {
+        document.body.classList.remove('dark-mode');
+      }
+    })();
+  </script>
+  <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch to light mode" title="Switch theme">
+    <span class="icon-sun ion-ios-sunny-outline" aria-hidden="true"></span>
+    <span class="icon-moon ion-ios-moon" aria-hidden="true"></span>
+  </button>
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
@@ -729,6 +742,7 @@
 
   <!-- Main Javascript File -->
   <script src="js/main.js"></script>
+  <script src="js/theme-toggle.js"></script>
 
 </body>
 </html>
