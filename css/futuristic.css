@@ -2,6 +2,11 @@
   FUTURISTIC THEME OVERLAY
   Layered on top of style.css — adds a
   dark, neon, glassmorphism aesthetic.
+
+  Scoped under body.dark-mode so it can be
+  switched off at runtime (see theme-toggle.js)
+  and the page falls back to the clean light
+  theme already defined in style.css.
 ======================================*/
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -19,7 +24,7 @@
 }
 
 /* ---------- Base ---------- */
-body {
+body.dark-mode {
   background: radial-gradient(circle at 12% 8%, rgba(138, 92, 255, 0.16), transparent 42%),
               radial-gradient(circle at 88% 18%, rgba(0, 240, 255, 0.14), transparent 40%),
               radial-gradient(circle at 50% 95%, rgba(255, 46, 154, 0.10), transparent 45%),
@@ -30,7 +35,7 @@ body {
   position: relative;
 }
 
-body::before {
+body.dark-mode::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -43,12 +48,14 @@ body::before {
   mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9), transparent 78%);
 }
 
-h1, h2, h3, h4, h5, h6 {
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
   color: var(--text-bright);
   font-family: 'Space Grotesk', 'Poppins', sans-serif;
 }
 
-.title-a, .intro-title, .w-title, .card-title, .s-title {
+body.dark-mode .title-a, body.dark-mode .intro-title, body.dark-mode .w-title,
+body.dark-mode .card-title, body.dark-mode .s-title {
   font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
   -webkit-background-clip: text;
@@ -57,9 +64,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
+/* Info labels (Name/Profile/Email/Phone, "Programming Skill", etc.) default
+   to a near-black color in style.css, which is invisible on the dark
+   background — brighten them for dark mode. */
+body.dark-mode .title-s {
+  color: var(--text-bright);
+}
+
 /* Reserve consistent height for project titles (1 or 2 lines) so the
    image boxes beneath them line up across cards in the same row,
-   regardless of how long each project title is. */
+   regardless of how long each project title is. Kept unscoped since
+   it's a layout fix that should apply in both themes. */
 .portfolio-mf .w-title {
   display: flex;
   align-items: flex-end;
@@ -68,58 +83,59 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-.line-mf {
+body.dark-mode .line-mf {
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple)) !important;
   box-shadow: 0 0 12px var(--neon-cyan);
 }
 
-a { color: var(--text-bright); }
-a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
+body.dark-mode a { color: var(--text-bright); }
+body.dark-mode a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
 
-.text-h, .card-description, .s-description, .lead, p {
+body.dark-mode .text-h, body.dark-mode .card-description,
+body.dark-mode .s-description, body.dark-mode .lead, body.dark-mode p {
   color: var(--text-dim);
 }
 
 /* ---------- Nav ---------- */
-#mainNav {
+body.dark-mode #mainNav {
   background: rgba(6, 8, 20, 0.55) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-glow);
 }
 
-.navbar-b.navbar-trans .nav-link {
+body.dark-mode .navbar-b.navbar-trans .nav-link {
   color: var(--text-bright) !important;
 }
 
-.navbar-b.navbar-trans .nav-link:hover,
-.navbar-b.navbar-trans .active > .nav-link {
+body.dark-mode .navbar-b.navbar-trans .nav-link:hover,
+body.dark-mode .navbar-b.navbar-trans .active > .nav-link {
   color: var(--neon-cyan) !important;
   text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
 }
 
-.navbar-b.navbar-trans .nav-link:before {
+body.dark-mode .navbar-b.navbar-trans .nav-link:before {
   background-color: var(--neon-cyan) !important;
   box-shadow: 0 0 8px var(--neon-cyan);
 }
 
-.First { filter: drop-shadow(0 0 6px var(--neon-cyan)); }
+body.dark-mode .First { filter: drop-shadow(0 0 6px var(--neon-cyan)); }
 
 /* ---------- Intro / Hero ---------- */
-.intro .overlay-itro {
+body.dark-mode .intro .overlay-itro {
   background: linear-gradient(160deg, rgba(5,6,15,0.88), rgba(10,14,36,0.75) 55%, rgba(20,10,40,0.85));
 }
 
-.intro-subtitle, .intro-subtitle strong {
+body.dark-mode .intro-subtitle, body.dark-mode .intro-subtitle strong {
   color: var(--neon-cyan);
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.45);
 }
 
 /* ---------- Glass panels / cards ---------- */
-.box-shadow-full,
-.service-box,
-.work-box,
-.card-blog {
+body.dark-mode .box-shadow-full,
+body.dark-mode .service-box,
+body.dark-mode .work-box,
+body.dark-mode .card-blog {
   background: var(--bg-panel) !important;
   border: 1px solid var(--border-glow);
   border-radius: 14px;
@@ -129,21 +145,21 @@ a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); 
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.box-shadow-full:hover,
-.service-box:hover,
-.work-box:hover,
-.card-blog:hover {
+body.dark-mode .box-shadow-full:hover,
+body.dark-mode .service-box:hover,
+body.dark-mode .work-box:hover,
+body.dark-mode .card-blog:hover {
   transform: translateY(-4px);
   border-color: var(--neon-cyan);
   box-shadow: 0 0 24px rgba(0, 240, 255, 0.22), 0 24px 46px -18px rgba(0,0,0,0.8);
 }
 
-.exp-current {
+body.dark-mode .exp-current {
   border-color: var(--neon-pink) !important;
   box-shadow: 0 0 26px rgba(255, 46, 154, 0.22);
 }
 
-.exp-logo {
+body.dark-mode .exp-logo {
   filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.35));
   background: rgba(255,255,255,0.92);
   border-radius: 10px;
@@ -151,105 +167,158 @@ a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); 
 }
 
 /* ---------- Icons (skills + socials) ---------- */
-.ico-circle {
+body.dark-mode .ico-circle {
   background: linear-gradient(135deg, rgba(0,240,255,0.14), rgba(138,92,255,0.14));
   border: 1px solid var(--border-glow);
   box-shadow: 0 0 18px rgba(0, 240, 255, 0.18);
   color: var(--neon-cyan);
 }
 
-.service-box:hover .ico-circle,
-.socials a:hover .ico-circle {
+body.dark-mode .service-box:hover .ico-circle,
+body.dark-mode .socials a:hover .ico-circle {
   box-shadow: 0 0 26px rgba(0, 240, 255, 0.4);
   border-color: var(--neon-cyan);
   color: var(--neon-cyan);
 }
 
 /* ---------- Progress bars ---------- */
-.skill-mf span { color: var(--text-bright); }
+body.dark-mode .skill-mf span { color: var(--text-bright); }
 
-.progress {
+body.dark-mode .progress {
   background-color: rgba(255,255,255,0.06) !important;
   border-radius: 6px;
   overflow: visible;
 }
 
-.skill-mf .progress .progress-bar {
+body.dark-mode .skill-mf .progress .progress-bar {
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple)) !important;
   box-shadow: 0 0 12px rgba(0, 240, 255, 0.55);
   border-radius: 6px;
 }
 
 /* ---------- Buttons ---------- */
-.button {
+body.dark-mode .button {
   background: linear-gradient(90deg, rgba(0,240,255,0.14), rgba(138,92,255,0.14));
   border: 1px solid var(--neon-cyan) !important;
   color: var(--text-bright) !important;
   box-shadow: 0 0 14px rgba(0, 240, 255, 0.18);
 }
 
-.button:hover {
+body.dark-mode .button:hover {
   box-shadow: 0 0 22px rgba(0, 240, 255, 0.5) !important;
   color: #05060f !important;
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
 }
 
 /* ---------- Work / project cards ---------- */
-.w-ctegory, .w-date { color: var(--text-dim) !important; }
-.w-like { color: var(--neon-cyan); }
+body.dark-mode .w-ctegory, body.dark-mode .w-date { color: var(--text-dim) !important; }
+body.dark-mode .w-like { color: var(--neon-cyan); }
 
 /* ---------- Contact / footer ---------- */
-.contact-mf .title-box-2 .title-left,
-.card-category .category {
+body.dark-mode .contact-mf .title-box-2 .title-left,
+body.dark-mode .card-category .category {
   color: var(--neon-cyan);
 }
 
-footer {
+body.dark-mode footer {
   background: rgba(4, 5, 12, 0.75) !important;
 }
 
 /* Contact section overlay — replace the bright blue paralax tint with the dark neon palette */
-.footer-paralax .overlay-mf {
+body.dark-mode .footer-paralax .overlay-mf {
   background: linear-gradient(160deg, rgba(5,6,15,0.92), rgba(10,14,36,0.88) 55%, rgba(20,10,40,0.92)) !important;
   opacity: 1 !important;
 }
 
-.contact-mf .contact-box,
-#sendmessage {
+body.dark-mode .contact-mf .contact-box,
+body.dark-mode #sendmessage {
   color: var(--text-bright);
 }
 
-.contact-mf input,
-.contact-mf textarea {
+body.dark-mode .contact-mf input,
+body.dark-mode .contact-mf textarea {
   background: rgba(8, 10, 24, 0.55) !important;
   border: 1px solid var(--border-glow) !important;
   color: var(--text-bright) !important;
 }
 
-.contact-mf input::placeholder,
-.contact-mf textarea::placeholder {
+body.dark-mode .contact-mf input::placeholder,
+body.dark-mode .contact-mf textarea::placeholder {
   color: var(--text-dim) !important;
 }
 
-.contact-mf .button {
+body.dark-mode .contact-mf .button {
   background: linear-gradient(90deg, rgba(0,240,255,0.14), rgba(138,92,255,0.14));
 }
 
-.contact-mf .list-ico li,
-.contact-mf .more-info .lead {
+body.dark-mode .contact-mf .list-ico li,
+body.dark-mode .contact-mf .more-info .lead {
   color: var(--text-dim);
 }
 
-.contact-mf .list-ico span {
+body.dark-mode .contact-mf .list-ico span {
   color: var(--neon-cyan);
 }
 
 /* ---------- Misc ---------- */
-::selection {
+body.dark-mode ::selection {
   background: rgba(0, 240, 255, 0.35);
   color: #05060f;
 }
 
-.about-img img, .card-img img {
+body.dark-mode .about-img img, body.dark-mode .card-img img {
   border: 1px solid var(--border-glow);
+}
+
+/* ======================================
+   THEME TOGGLE BUTTON
+   Unscoped so it renders correctly no
+   matter which theme is currently active.
+====================================== */
+.theme-toggle-btn {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 1050;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e1e1e;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  font-size: 1.15rem;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.theme-toggle-btn .icon-sun { display: none; }
+.theme-toggle-btn .icon-moon { display: inline-block; }
+
+body.dark-mode .theme-toggle-btn {
+  background: rgba(16, 20, 41, 0.75);
+  border: 1px solid var(--border-glow);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.28);
+}
+
+body.dark-mode .theme-toggle-btn .icon-sun { display: inline-block; }
+body.dark-mode .theme-toggle-btn .icon-moon { display: none; }
+
+@media (max-width: 767px) {
+  .theme-toggle-btn {
+    top: 12px;
+    right: 62px;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
 }
