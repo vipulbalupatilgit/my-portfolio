@@ -57,6 +57,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
+/* Reserve consistent height for project titles (1 or 2 lines) so the
+   image boxes beneath them line up across cards in the same row,
+   regardless of how long each project title is. */
+.portfolio-mf .w-title {
+  display: flex;
+  align-items: flex-end;
+  min-height: 3.4rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
 .line-mf {
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple)) !important;
   box-shadow: 0 0 12px var(--neon-cyan);
